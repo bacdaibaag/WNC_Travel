@@ -16,6 +16,30 @@ class HomeController extends Controller
         dd($customers);
     }
     
+    // public function register(Request $request)
+    // {
+    //     $validated = $request->validate([
+    //         'name' => 'required|string|max:50',
+    //         'phone' => 'nullable|string|max:15',
+    //         'email' => 'required|string|email|max:50',
+    //         'password' => 'required|string|max:50',
+    //     ]);
+
+    //     $emailExists = CustomerModel::where('email', $validated['email'])->exists();
+
+    //     if ($emailExists) {
+    //         return response()->json(['message' => 'Email đã tồn tại!'], 400);
+    //     }
+
+    //     $newId = 'CUS' . str_pad(CustomerModel::count() + 1, 4, '0', STR_PAD_LEFT);
+    //     $validated['idCustomer'] = $newId;
+    //     $validated['idAddress'] = null;
+    //     $validated['password'] = md5($validated['password']);
+
+    //     $customer = CustomerModel::insertCustomer($validated);
+
+    //     return response()->json(['message' => 'Đăng ký thành công!'], 201);
+    // }
     public function register(Request $request)
     {
         $validated = $request->validate([
