@@ -11,8 +11,6 @@
     <title>Travel Easy</title>
 </head>
 <body>
-<!-- <button id="myButton">Click me</button> -->
-
     <div class="main">
 <!-- =====================================================HEADER===================================================== -->
         <div class="header">
@@ -28,6 +26,7 @@
                 <a href="W02-blog.html" id="blog">Blog</a>
                 <a href="#" onclick="document.querySelector('.modal-search').style.display='block'">Login in</i></a>
                 <a href="#" onclick="document.querySelector('.modal').style.display='block'">Register</a>
+                <a href="#" id="user-name"></a>
             </div>
         </div>
         <div class="header-mid">
@@ -687,22 +686,23 @@
                 <i onclick="document.querySelector('.modal-search').style.display='none'" style="cursor: pointer;" class="fa-solid fa-xmark"></i>
             </div>
             <div class="modal-body">
-                <form action="../Controller/LoginController.php" method="POST">
-                    <div  class="modal-body-p">
+                <form action="/login" id="loginForm" method="POST">
+                    @csrf
+                    <div class="modal-body-p">
                         <p class="modal-body-p1">Email address</p>
                         <span>required</span>
                     </div>
-                    <input class="modal-body-name" type="text" id="txtAccount" name="txtAccount" required>
-                    <div  class="modal-body-p">
+                    <input class="modal-body-name" type="email" id="txtAccount" name="email" required>
+                    <div class="modal-body-p">
                         <p class="modal-body-p1">Password</p>
                         <span>required</span>
                     </div>
-                    <input class="modal-body-name" type="password" id="txtPassword" name="txtPassword" required> 
+                    <input class="modal-body-name" type="password" id="txtPassword" name="password" required> 
                     <button type="submit">Submit</button>   
                     <div class="modal-footer">
                         <p>By providing your email & phone number you agree to direct marketing, including SMS. Consent is not a condition to purchase. You can unsubscribe any time.</p>
                     </div>
-                </form>  
+                </form>
             </div>
         </div>
     </div>
@@ -754,38 +754,6 @@
         </div>
     </div>
 <!-- ==================================================END FOOTER============================================================ -->
-    <!-- <script src="../js/home.js"></script> -->
     <script src="{{ asset('assets/js/home.js') }}"></script>
-    <script>
-        function submitForm() {
-            const form = document.getElementById('registerForm');
-            const formData = new FormData(form);
-
-            fetch('/register', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value
-                }
-            })
-            .then(response => {
-                if (response.status === 201) {
-                    console.log('Đăng ký thành công!');
-                    window.location.href = '/'; // Chuyển hướng về trang chủ
-                } else if (response.status === 400) {
-                    console.error('Email đã tồn tại!');
-                } else {
-                    console.error('Đã xảy ra lỗi. Vui lòng thử lại.');
-                }
-                return response.text();
-            })
-            .then(text => {
-                console.log('Phản hồi từ máy chủ:', text);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    </script>
 </body>
 </html>

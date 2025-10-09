@@ -10,36 +10,16 @@ use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
+    // ===================================INDEX=============================================
     public function index()
     {
         $customers = CustomerModel::getCustomer();
         dd($customers);
     }
-    
-    // public function register(Request $request)
-    // {
-    //     $validated = $request->validate([
-    //         'name' => 'required|string|max:50',
-    //         'phone' => 'nullable|string|max:15',
-    //         'email' => 'required|string|email|max:50',
-    //         'password' => 'required|string|max:50',
-    //     ]);
+    // ===================================END INDEX=========================================
 
-    //     $emailExists = CustomerModel::where('email', $validated['email'])->exists();
+    // ==================================REGISTER===========================================
 
-    //     if ($emailExists) {
-    //         return response()->json(['message' => 'Email đã tồn tại!'], 400);
-    //     }
-
-    //     $newId = 'CUS' . str_pad(CustomerModel::count() + 1, 4, '0', STR_PAD_LEFT);
-    //     $validated['idCustomer'] = $newId;
-    //     $validated['idAddress'] = null;
-    //     $validated['password'] = md5($validated['password']);
-
-    //     $customer = CustomerModel::insertCustomer($validated);
-
-    //     return response()->json(['message' => 'Đăng ký thành công!'], 201);
-    // }
     public function register(Request $request)
     {
         $validated = $request->validate([
@@ -64,6 +44,46 @@ class HomeController extends Controller
 
         return response()->json(['message' => 'Đăng ký thành công!'], 201);
     }
+    // ==================================END REGISTER=======================================
+
+    // ==================================LOGIN==============================================
+    
+    public function login_1(Request $request)
+    {
+        $validated = $request->validate([
+            'email' => 'required|string|email|max:50',
+            'password' => 'required|string|max:50',
+        ]);
+
+        $customer = CustomerModel::where('email', $validated['email'])->first();
+        if (!$customer || $customer->password !== md5($validated['password'])) {
+            return response()->json(['message' => 'Thông tin đăng nhập không chính xác!'], 400);
+        }
+
+        // Store customer information in the session
+        Session::put('customer', $customer);
+
+        return response()->json(['message' => 'Đăng nhập thành công!'], 200);
+    }
+
+    public function login(Request $request)
+    {
+        $validated = $request->validate([
+            'email' => 'required|string|email|max:50',
+            'password' => 'required|string|max:50',
+        ]);
+
+        $customer = CustomerModel::where('email', $validated['email'])->first();
+        if (!$customer || $customer->password !== md5($validated['password'])) {
+            return response()->json(['message' => 'Thông tin đăng nhập không chính xác!'], 400);
+        }
+
+        // Store customer information in the session
+        Session::put('customer', $customer);
+
+        return response()->json(['message' => 'Đăng nhập thành công!', 'name' => $customer->name], 200);
+    }
+    // ==================================END LOGIN==========================================
 }
 
 
