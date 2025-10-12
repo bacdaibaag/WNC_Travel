@@ -43,7 +43,7 @@
                 
                 <!-- <a href="#" id="user-name"></a> -->
                 <!-- <a href="#" id="a_logout" style="display:none;">Logout</a> -->
-                 
+                
             </div>
         </div>
         <div class="header-mid">
@@ -727,29 +727,29 @@
                         <p class="modal-body-p1">Password</p>
                         <span>required</span>
                     </div>
-                    <input class="modal-body-name" type="password" id="txtPassword" name="password" required> 
-                    <button type="submit">Submit</button>   
-                    <div class="modal-footer">
-                        <p>By providing your email & phone number you agree to direct marketing, including SMS. Consent is not a condition to purchase. You can unsubscribe any time.</p>
-                    </div>
-                </form>  -->
-                <!-- <form action="/login" method="POST" id="loginForm">
-                    @csrf
-                    <div class="modal-body-p">
-                        <p class="modal-body-p1">Email address</p>
-                        <span>required</span>
-                    </div>
-                    <input class="modal-body-name" type="email" name="email" required>
-                    <div class="modal-body-p">
-                        <p class="modal-body-p1">Password</p>
-                        <span>required</span>
-                    </div>
-                    <input class="modal-body-name" type="password" name="password" required>   
+                    <input class="modal-body-name" type="password" id="txtPassword" name="password" required>   
                     <button type="submit">Submit</button> 
                     <div class="modal-footer">
                         <p>By providing your email & phone number you agree to direct marketing, including SMS. Consent is not a condition to purchase. You can unsubscribe any time.</p>
                     </div>
                 </form>  -->
+                <!-- <form action="/login" method="POST" id="loginForm">
+                @csrf
+                <div class="modal-body-p">
+                    <p class="modal-body-p1">Email address</p>
+                    <span>required</span>
+                </div>
+                <input class="modal-body-name" type="email" name="email" required>
+                <div class="modal-body-p">
+                    <p class="modal-body-p1">Password</p>
+                    <span>required</span>
+                </div>
+                <input class="modal-body-name" type="password" name="password" required>   
+                <button type="submit">Submit</button> 
+                <div class="modal-footer">
+                    <p>By providing your email & phone number you agree to direct marketing, including SMS. Consent is not a condition to purchase. You can unsubscribe any time.</p>
+                </div>
+            </form>  -->
             <form action="/storeLogin" method="POST" id="loginForm">
                 @csrf
                 <div class="modal-body-p">
