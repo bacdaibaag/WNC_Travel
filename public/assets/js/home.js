@@ -198,3 +198,19 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 //     window.location.href = '/account';
 // });
 // ====================================END ACCOUNT==============================================================
+
+
+
+document.getElementById("closeButton").addEventListener("click", function() {
+    document.querySelector(".success-message").style.display = "none";
+});
+
+var successMessage = document.getElementById("successMessage");
+
+    // Nếu thẻ tồn tại
+    if (successMessage) {
+        // Thiết lập hàm tự đóng sau 10 giây
+        setTimeout(function() {
+            successMessage.style.display = "none";
+        }, 10000); // 10000 milliseconds = 10 giây
+    }

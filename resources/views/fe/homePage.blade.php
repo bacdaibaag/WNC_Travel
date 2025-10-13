@@ -17,7 +17,8 @@
     <div class="main">
     <div>
         @if ($message = Session::get('success'))
-            <div class="success-message">    
+            <div class="success-message">
+                <button type="button" id="closeButton" class="close" data-dismiss="alert">×</button>    
                 <strong>{{ $message }}</strong>
             </div>
         @endif
