@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('google_id') -> nullable();
+            // Thêm cột phone và idAddress vào bảng users
+            $table->string('phone', 15)->nullable();
+            $table->string('idAddress', 15)->nullable();
         });
     }
 
@@ -21,6 +23,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-
+        Schema::table('users', function (Blueprint $table) {
+            // Xóa cột phone và idAddress khi rollback migration
+            $table->dropColumn('phone');
+            $table->dropColumn('idAddress');
+        });
     }
 };
