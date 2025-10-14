@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AgencyController;
 use App\Http\Controllers\Admin\HomeAdminController;
 use App\Http\Controllers\Admin\TourController;
 use App\Http\Controllers\Admin\TourGuideController;
@@ -49,11 +50,11 @@ Route::post('admin/tours', [TourController::class, 'store'])->name('admin.tours.
 Route::get('admin/dasboard', [HomeAdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('admin/tours/view', [TourController::class, 'index'])->name('admin.tours.view');
 
-// Route cho Vehicles
+// Route cho Admmin
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('vehicles', VehicleController::class);
     Route::resource('tourguides', TourGuideController::class);
-
+    Route::resource('agencies', AgencyController::class);
 
 });
 
