@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tblcity', function (Blueprint $table) {
-            $table->string('idCity', 15)->primary();
-            $table->string('name', 50)->nullable();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('idAddress')->references('idAddress')->on('tbladdress');
         });
     }
 
@@ -23,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tblcity');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['idAddress']);
+        });
     }
 };

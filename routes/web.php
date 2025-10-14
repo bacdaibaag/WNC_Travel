@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeAdminController;
 use App\Http\Controllers\Admin\TourController;
+use App\Http\Controllers\Admin\VehicleController;
+use App\Http\Controllers\HotelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
-use App\Http\Controllers\HotelController;
 use App\Http\Controllers\listingsController;
 use App\Http\Controllers\tourDetailController;
 
@@ -29,7 +31,12 @@ Route::post('/storeLogin', [UserController::class, 'storeLogin'])->name('storeLo
 Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
-
+// HOTEL
+// Route::get('/', [HotelController::class, 'index'])->name('index');
+Route::get('/addHotel', [HotelController::class, 'addHotel'])->name('addHotel');
+Route::get('/store', [HotelController::class, 'store'])->name('store');
+Route::get('/update', [HotelController::class, 'update'])->name('update');
+Route::get('/delete', [HotelController::class, 'del'])->name('delete');
 
 //=====ADMIN==================
 Route::get('admin/tours/create', [TourController::class, 'create'])->name('admin.tours.create');
@@ -38,14 +45,15 @@ Route::get('admin/tours/create', [TourController::class, 'create'])->name('admin
 Route::post('admin/tours', [TourController::class, 'store'])->name('admin.tours.store');
 
 // Route cho việc hiển thị danh sách tour
+Route::get('admin/dasboard', [HomeAdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('admin/tours/view', [TourController::class, 'index'])->name('admin.tours.view');
 
-// HOTEL
-// Route::get('/', [HotelController::class, 'index'])->name('index');
-Route::get('/addHotel', [HotelController::class, 'addHotel'])->name('addHotel');
-Route::get('/store', [HotelController::class, 'store'])->name('store');
-Route::get('/update', [HotelController::class, 'update'])->name('update');
-Route::get('/delete', [HotelController::class, 'del'])->name('delete');
+// Route cho Vehicles
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('vehicles', VehicleController::class);
+});
+
+
 
 
 

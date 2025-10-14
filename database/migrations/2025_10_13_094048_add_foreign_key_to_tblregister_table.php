@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('tbladdress', function (Blueprint $table) {
-            // Thêm khóa ngoại vào cột idWard
-            $table->foreign('idWard')->references('idWard')->on('tblward')->onDelete('cascade');
+        Schema::table('tblregister', function (Blueprint $table) {
+            $table->foreign('emailUser')->references('email')->on('users');
         });
     }
 
@@ -22,9 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('tbladdress', function (Blueprint $table) {
-            // Xóa khóa ngoại nếu rollback
-            $table->dropForeign(['idWard']);
+        Schema::table('tblregister', function (Blueprint $table) {
+            $table->dropForeign(['emailUser']);
         });
     }
 };
