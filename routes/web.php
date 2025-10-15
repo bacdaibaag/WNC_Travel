@@ -37,6 +37,11 @@ Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallb
 
 // HOTEL
 
+// CHANGE PASSWORD
+Route::get('/change-password', [UserController::class, 'showChangePasswordForm'])->name('password.change');
+Route::post('/change-password', [UserController::class, 'changePassword'])->name('password.update');
+
+
 
 //=====ADMIN==================
 Route::get('admin/tours/create', [TourController::class, 'create'])->name('admin.tours.create');
