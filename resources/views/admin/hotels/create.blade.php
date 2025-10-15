@@ -11,35 +11,20 @@
             <h1>Admin Dashboard</h1>
             <nav>
                 <ul>
-                    <li><a href="{{ route('admin.tourguides.index') }}">Manage Tour Guides</a></li>
-                    <li><a href="{{ route('admin.tourguides.create') }}">Create Tour Guide</a></li>
+                    <li><a href="{{ route('admin.tourguides.index') }}">Manage Hotels</a></li>
+                    <li><a href="{{ route('admin.tourguides.create') }}">Create Hotels</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <h2>Create New Tour Guide</h2>
+            <h2>Create New Hotesl</h2>
 
             <form action="{{ route('admin.tourguides.store') }}" method="POST">
                 @csrf
                 <div>
-                    <label for="idTourGuide">Tour Guide ID</label>
-                    <input type="text" id="idTourGuide" name="idTourGuide" required>
-                </div>
-
-                <div>
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name">
-                </div>
-
-                <div>
-                    <label for="phone">Phone</label>
-                    <input type="text" id="phone" name="phone">
-                </div>
-
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
                 </div>
 
                 <div>
@@ -68,8 +53,9 @@
                     <input type="text" id="detailAddress" name="detailAddress">
                 </div>
 
-                <button type="submit">Create Tour Guide</button>
+                <button type="submit">Create Hotel</button>
             </form>
+            
         </main>
     </div>
 

@@ -10,7 +10,7 @@ class Address extends Model
     use HasFactory;
     protected $table = 'tbladdress';
     protected $primaryKey = 'idAddress';
-    public $incrementing = false;
+    // public $incrementing = false;
     public $timestamps = false;
 
     protected $fillable = [
@@ -23,7 +23,7 @@ class Address extends Model
     public function tours()
     {
         return $this->hasMany(Tour::class, 'idAddress', 'idAddress');
-    }
+    }   
     public function hotels()
     {
         return $this->hasMany(Hotel::class, 'idAddress', 'idAddress');
