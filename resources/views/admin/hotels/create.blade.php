@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create New Tour</title>
+    <title>Create New Tour Guide</title>
     <!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-
 </head>
 <body>
     <div class="container">
@@ -12,19 +11,20 @@
             <h1>Admin Dashboard</h1>
             <nav>
                 <ul>
-                    <li><a href="{{ route('admin.tours.index') }}">Manage Tours</a></li>
-                    <li><a href="{{ route('admin.tours.create') }}">Create Tour</a></li>
+                    <li><a href="{{ route('admin.tourguides.index') }}">Manage Tour Guides</a></li>
+                    <li><a href="{{ route('admin.tourguides.create') }}">Create Tour Guide</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <h2>Create New Tour</h2>
-            <form action="{{ route('admin.tours.store') }}" method="POST">
+            <h2>Create New Tour Guide</h2>
+
+            <form action="{{ route('admin.tourguides.store') }}" method="POST">
                 @csrf
                 <div>
-                    <label for="idTour">Tour ID</label>
-                    <input type="text" id="idTour" name="idTour" required>
+                    <label for="idTourGuide">Tour Guide ID</label>
+                    <input type="text" id="idTourGuide" name="idTourGuide" required>
                 </div>
 
                 <div>
@@ -33,18 +33,13 @@
                 </div>
 
                 <div>
-                    <label for="startDay">Start Day</label>
-                    <input type="date" id="startDay" name="startDay">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone">
                 </div>
 
                 <div>
-                    <label for="endDay">End Day</label>
-                    <input type="date" id="endDay" name="endDay">
-                </div>
-
-                <div>
-                    <label for="cost">Cost</label>
-                    <input type="text" id="cost" name="cost">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
                 </div>
 
                 <div>
@@ -73,39 +68,11 @@
                     <input type="text" id="detailAddress" name="detailAddress">
                 </div>
 
-                <div>
-                    <label for="idHotel">Hotel</label>
-                    <select id="idHotel" name="idHotel">
-                        <option value="" selected>Select Hotel</option>
-                        @foreach($hotels as $hotel)
-                            <option value="{{ $hotel->idHotel }}">{{ $hotel->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
-                <div>
-                    <label for="idVehicle">Vehicle</label>
-                    <select id="idVehicle" name="idVehicle">
-                        <option value="" selected>Select Vehicle</option>
-                        @foreach($vehicles as $vehicle)
-                            <option value="{{ $vehicle->idVehicle }}">{{ $vehicle->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
-                <div>
-                    <label for="idTourGuide">Tour Guide</label>
-                    <select id="idTourGuide" name="idTourGuide">
-                        <option value="" selected>Select Tour Guide</option>
-                        @foreach($tourGuides as $tourGuide)
-                            <option value="{{ $tourGuide->idTourGuide }}">{{ $tourGuide->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <button type="submit">Create Tour</button>
+                <button type="submit">Create Tour Guide</button>
             </form>
         </main>
     </div>
+
     <script>
     var citis = document.getElementById("city");
     var districts = document.getElementById("district");
@@ -146,5 +113,6 @@
         };
     }
 </script>
+
 </body>
 </html>
