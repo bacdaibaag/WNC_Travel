@@ -44,7 +44,7 @@ class TourController extends Controller
             'idTourGuide' => 'nullable|string|max:15',
         ]);
         // Create the address first
-        $address = Address::create([
+        $address = Address::updateOrCreate([
             'idAddress' => $data['idTour'], // Assuming you want to use the same ID
             'city' => $data['city'],
             'district' => $data['district'],

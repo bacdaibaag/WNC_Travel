@@ -19,4 +19,8 @@ class Vehicle extends Model
         'name',
         'licensePlate',
     ];
+    public function tours()
+    {
+        return $this->hasMany(Tour::class, 'idVehicle', 'idVehicle');
+    }
 }
