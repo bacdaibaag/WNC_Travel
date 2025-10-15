@@ -22,11 +22,7 @@
             <h2>Create New Tour</h2>
             <form action="{{ route('admin.tours.store') }}" method="POST">
                 @csrf
-                <div>
-                    <label for="idTour">Tour ID</label>
-                    <input type="text" id="idTour" name="idTour" required>
-                </div>
-
+                
                 <div>
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name">

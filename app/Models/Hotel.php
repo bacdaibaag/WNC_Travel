@@ -24,7 +24,7 @@ class Hotel extends Model
     {
         return $this->belongsTo(Address::class, 'idAddress', 'idAddress');
     }
-        public function tours()
+    public function tours()
     {
         return $this->hasMany(Tour::class, 'idHotel', 'idHotel');
     }
