@@ -65,7 +65,7 @@ Route::get('admin/tours/view', [TourController::class, 'index'])->name('admin.to
 
 // CUSTOMER CREATE
 Route::get('admin/customer/create', [TourController::class, 'create'])->name('admin.customer.create');
-Route::get('admin/customer/create', [CustomerController::class, 'store'])->name('admin.customer.create');
+// Route::get('admin/customer/create', [CustomerController::class, 'store'])->name('admin.customer.create');
 
 
 // Route cho Admmin
@@ -73,7 +73,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('vehicles', VehicleController::class);
     Route::resource('tourguides', TourGuideController::class);
     // Route::resource('agencies', AgencyController::class);
-    Route::resource('customer', CustomerController::class);
+    // Route::resource('customer', CustomerController::class);
 });
 
 
