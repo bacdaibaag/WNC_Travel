@@ -25,7 +25,13 @@ class UserController extends Controller
     }
     public function account()
     {
-        return view('fe.account');
+        $user = Auth::user();
+        // return view('fe.account');
+        $addresses = DB::table('tbladdress')
+        ->where('idAddress', $user->id)
+        ->get();
+
+        return view('fe.account', compact('addresses'));
     }
     public function showChangePasswordForm()
     {
@@ -161,24 +167,32 @@ class UserController extends Controller
             'ward' => 'required|string|max:50',
             'detailAddress' => 'nullable|string|max:50',
         ]);
-        // dd($data);
 
         $user = Auth::user();
 
-        $check1= DB::table('users')->where('id', $user->id)->update([
+        DB::table('users')->where('id', $user->id)->update([
             'phone' => $request->phone,
         ]);
-        // dd($check1);
 
-        $check = DB::table('tbladdress')->where('idAddress', $user->id)->update([
-            'city' => $data['city'],
-            'district' => $data['district'],
-            'ward' => $data['ward'],
-            'detailAddress' => $data['detailAddress'],
-        ]);
-        dd($check);
+        $existingAddress = DB::table('tbladdress')->where('idAddress', $user->id)->first();
 
-        // return redirect()->route('account')->with('success', 'Profile updated successfully');
+        if ($existingAddress) {
+            DB::table('tbladdress')->where('idAddress', $user->id)->update([
+                'city' => $data['city'],
+                'district' => $data['district'],
+                'ward' => $data['ward'],
+                'detailAddress' => $data['detailAddress'],
+            ]);
+        } else {
+            DB::table('tbladdress')->insert([
+                'city' => $data['city'],
+                'district' => $data['district'],
+                'ward' => $data['ward'],
+                'detailAddress' => $data['detailAddress'],
+                'idAddress' => $user->id,
+            ]);
+        }
+        return redirect()->back()->with('success', 'Update successfully');
     }
 }
 
@@ -187,4 +201,13 @@ class UserController extends Controller
 
 
 
+
+// $check = DB::table('tbladdress')
+        //     ->where('idAddress', $user->id)
+        //     ->update([
+        //         'city' => $data['city'],
+        //         'district' => $data['district'],
+        //         'ward' => $data['ward'],
+        //         'detailAddress' => $data['detailAddress'],
+        //     ]);
 
