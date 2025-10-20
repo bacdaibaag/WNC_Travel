@@ -41,6 +41,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.hotels.index') }}">
+                <i class="mdi mdi-hotel menu-icon"></i>
+                <span class="menu-title">Hotels</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.tourguides.index') }}">
                 <i class="mdi mdi-account menu-icon"></i>
                 <span class="menu-title">Tour Guide</span>

@@ -58,10 +58,7 @@ Route::post('/account/update', [UserController::class, 'updateProfile'])->name('
 //=====ADMIN==================
 
 
-// Route cho việc hiển thị danh sách tour
-Route::get('admin/dasboard', [HomeAdminController::class, 'dashboard'])->name('admin.dashboard');
-Route::get('admin/tours/view', [TourController::class, 'index'])->name('admin.tours.view');
-// Route::get('/listings/tour_detail/{idTour}', [TourDetailController::class, 'tour_detail'])->name('tour_detail');
+
 
 // CUSTOMER CREATE
 Route::get('admin/customer/create', [TourController::class, 'create'])->name('admin.customer.create');
@@ -70,10 +67,13 @@ Route::get('admin/customer/create', [TourController::class, 'create'])->name('ad
 
 // Route cho Admmin
 Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [HomeAdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('vehicles', VehicleController::class);
     Route::resource('tourguides', TourGuideController::class);
+    Route::resource('users',  App\Http\Controllers\Admin\UserController::class);
     // Route::resource('agencies', AgencyController::class);
     // Route::resource('customer', CustomerController::class);
+    
 });
 
 
