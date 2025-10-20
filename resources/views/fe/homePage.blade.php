@@ -51,7 +51,7 @@
                     <a href="{{route('logout')}}" id="a_logout">Log out</a>
                 @else
                     <!-- Hiển thị nếu người dùng chưa đăng nhập -->
-                    <a href="{{route('login')}}" id="login">Log in</a>
+                    <a href="{{route('loginn')}}" id="login">Log in</a>
                     <a href="{{route('register')}}" id="register">Register</a>
                 @endif
 
@@ -778,7 +778,7 @@
                 <div class="email">
                     <!-- <img src="../../../assets/images/email.png" alt=""> -->
                     <img src="{{asset('assets/images/email.png')}}" alt="">
-                    <p>21011601@st.phenikaa-uni.edu.vn</p>
+                    <p>email@gmail.com</p>
                 </div>
             </div>
             <div class="company">
