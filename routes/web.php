@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\HomeAdminController;
+use App\Http\Controllers\Admin\HotelController;
 use App\Http\Controllers\Admin\TourController;
 use App\Http\Controllers\Admin\TourGuideController;
 use App\Http\Controllers\Admin\VehicleController;
@@ -57,23 +58,13 @@ Route::post('/account/update', [UserController::class, 'updateProfile'])->name('
 
 //=====ADMIN==================
 
-
-
-
-// CUSTOMER CREATE
-Route::get('admin/customer/create', [TourController::class, 'create'])->name('admin.customer.create');
-// Route::get('admin/customer/create', [CustomerController::class, 'store'])->name('admin.customer.create');
-
-
-// Route cho Admmin
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [HomeAdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('vehicles', VehicleController::class);
     Route::resource('tourguides', TourGuideController::class);
     Route::resource('users',  App\Http\Controllers\Admin\UserController::class);
-    // Route::resource('agencies', AgencyController::class);
-    // Route::resource('customer', CustomerController::class);
-    
+    Route::resource('hotels', HotelController::class);
+    Route::resource('tours', TourController::class);
 });
 
 
