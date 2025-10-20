@@ -51,7 +51,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-</div>
+                            </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="idTourGuide">Tour Guide</label>
@@ -106,8 +106,8 @@
                                     name="description"
                                     required                                    
                                     ></textarea>
-</div>
-</div>
+                                </div>
+                            </div>
                             <div class="col-md-4">
                                 <div style="margin-top:-1px;" class="form-group">
                                     <label>Image Tour</label>
@@ -120,14 +120,14 @@
                                     </div>
                                     <img id="imgPrev" src="#" alt="Preview Image" style="max-width: 100%; margin-top: 10px; display: none;">
                                 </div>
-</div>
-</div>
+                            </div>
+                        </div>
     
                         <button class="btn btn-primary mr-2" type="submit">Create Tour</button>
                         <button class="btn btn-light">Cancel</button>
                     </form>
                 </div>
-</div>
-</div>
+            </div>
+        </div>
 
 @endsection
