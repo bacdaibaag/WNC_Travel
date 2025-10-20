@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\HomeAdminController;
 use App\Http\Controllers\Admin\HotelController;
@@ -65,8 +66,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('users',  App\Http\Controllers\Admin\UserController::class);
     Route::resource('hotels', HotelController::class);
     Route::resource('tours', TourController::class);
+    Route::resource('bookings', BookingController::class);
+    Route::post('bookings/{booking}/confirm', [BookingController::class, 'confirm']);
+    Route::post('bookings/{booking}/pay', [BookingController::class, 'pay']);
 });
-
 
 
 
