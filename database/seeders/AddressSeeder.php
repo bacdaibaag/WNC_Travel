@@ -50,10 +50,34 @@ class AddressSeeder extends Seeder
                 'ward' => 'Xã Bình Đông',
                 'detailAddress' => 'To 3',
             ],
+            [
+                'city' => 'Thành phố Hà Nội',
+                'district' => 'Quận Ba Đình',
+                'ward' => 'Phường Cống Vị',
+                'detailAddress' => '234 Cong Vi',
+            ],
+            [
+                'city' => 'Thành phố Hà Nội',
+                'district' => 'Quận Ba Đình',
+                'ward' => 'Phường Đội Cấn',
+                'detailAddress' => '456 Doi Can',
+            ],
+            [
+                'city' => 'Thành phố Hà Nội',
+                'district' => 'Quận Ba Đình',
+                'ward' => 'Phường Điện Biên',
+                'detailAddress' => '789 Dien Bien',
+            ],
+            [
+                'city' => 'Thành phố Hà Nội',
+                'district' => 'Quận Ba Đình',
+                'ward' => 'Phường Ngọc Hà',
+                'detailAddress' => '357 Ngoc Ha',
+            ],
         ];
 
         foreach ($addresses as $address) {
-            DB::table('addresses')->insert([
+            DB::table('tbladdress')->insert([
                 'city' => $address['city'],
                 'district' => $address['district'],
                 'ward' => $address['ward'],

@@ -17,13 +17,15 @@ class DatabaseSeeder extends Seeder
         User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => '1234',
+            'role' => 'admin',
         ]);
-        User::factory()->create([
-            'name' => 'Test User 2',
-            'email' => 'test2@example.com',
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test User 2',
+        //     'email' => 'test2@example.com',
+        // ]);
 
         $this->call([
             AddressSeeder::class,
