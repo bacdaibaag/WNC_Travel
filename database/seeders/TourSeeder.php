@@ -16,7 +16,7 @@ class TourSeeder extends Seeder
         DB::table('tblTour')->insert([
             [
                 'idTour' => 'TO001',
-                'name' => 'Tour A',
+                'name' => 'TO1',
                 'startDay' => '2024-06-15',
                 'endDay' => '2024-06-20',
                 'cost' => 500,
@@ -29,16 +29,16 @@ class TourSeeder extends Seeder
             ],
             [
                 'idTour' => 'TO002',
-                'name' => 'Tour B',
+                'name' => 'T02',
                 'startDay' => '2024-07-01',
                 'endDay' => '2024-07-10',
                 'cost' => 700,
                 'imageTour' => 'assets/images/maichau.jpg',
                 'description' => 'This is tour B description.',
                 'idAddress' => 2,
-                'idHotel' => 'HT1',
-                'idVehicle' => 'VH1',
-                'idTourGuide' => 'TG1',
+                'idHotel' => 'HT2',
+                'idVehicle' => 'VH3',
+                'idTourGuide' => 'TG2',
             ],
         ]);
     }
