@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\AdminConfirmation;
-use App\Mail\BookingConfirmed;
+use App\Mail\PaymentConfirmatiom;
 use App\Models\Booking;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -19,7 +20,7 @@ class BookingController extends Controller
         return view('admin.bookings.index', compact('bookings'));
     }
 
-    
+
     public function confirm(Request $request, $id)
     {
         try{
@@ -41,9 +42,10 @@ class BookingController extends Controller
     {
         $booking = Booking::findOrFail($id);
 
-        // Update trạng thái
         $booking->payment_status = 'paid';
         $booking->save();
+        
+        Mail::to($booking->user->email)->send(new PaymentConfirmatiom($booking));
 
         return redirect()->back()->with('success', 'Booking payment confirmed successfully.');
     }
