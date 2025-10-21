@@ -37,7 +37,7 @@ class HotelSeeder extends Seeder
         ];
 
         foreach ($hotels as $hotel) {
-            DB::table('hotels')->insert([
+            DB::table('tblhotel')->insert([
                 'idHotel' => $hotel['idHotel'],
                 'idAddress' => $hotel['idAddress'],
                 'name' => $hotel['name'],

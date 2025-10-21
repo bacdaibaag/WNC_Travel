@@ -45,7 +45,7 @@ class TourGuideSeeder extends Seeder
         ];
 
         foreach ($tourGuides as $tourGuide) {
-            DB::table('tour_guides')->insert([
+            DB::table('tbltourguide')->insert([
                 'idTourGuide' => $tourGuide['idTourGuide'],
                 'idAddress' => $tourGuide['idAddress'],
                 'name' => $tourGuide['name'],
