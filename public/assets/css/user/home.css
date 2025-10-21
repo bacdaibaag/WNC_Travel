@@ -892,6 +892,7 @@ select.form-control:focus {
 }
   
 .article {
+    height: 280px;
     width: calc(100% - 20px); 
     background-color: #fff;
     margin: 10px; /* Khoảng cách giữa các box */

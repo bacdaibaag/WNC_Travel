@@ -32,9 +32,9 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'role' => 'user',
         ]);
+        
 
         $this->call([
-            AddressSeeder::class,
             VehicleSeeder::class,
             TourGuideSeeder::class,
             HotelSeeder::class,    
