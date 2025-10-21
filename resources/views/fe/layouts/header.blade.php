@@ -12,7 +12,7 @@
             <a href="{{route('account')}}" id="account">{{ Auth::user()->name }}</a>
             <a href="{{route('logout')}}" id="a_logout">Log out</a>
         @else
-            <a href="{{route('loginn')}}" id="login">Log in</a>
+            <a href="{{route('login')}}" id="login">Log in</a>
             <a href="{{route('register')}}" id="register">Register</a>
         @endif
     </div>

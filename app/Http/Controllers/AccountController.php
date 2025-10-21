@@ -12,10 +12,7 @@ use Illuminate\Support\Facades\Mail;
 
 class AccountController extends Controller
 {
-    public function index()
-    {
-        return view('fe.homePage');
-    }
+
     public function register()
     {
         return view('account.registerr');
@@ -24,7 +21,6 @@ class AccountController extends Controller
     {
         return view('account.login');
     }
-    
     public function store(Request $req)
     {
         $req->merge(['password'=>bcrypt($req->password)]);
@@ -46,7 +42,7 @@ class AccountController extends Controller
     }
     public function storeLogin(Request $req)
     {
-       $credentials = $req->only('email', 'password');
+        $credentials = $req->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
@@ -70,9 +66,9 @@ class AccountController extends Controller
     {
         Auth::logout();
         return redirect()->route('index');
-    }
-    
+    }    
 }
+
 
 
 
