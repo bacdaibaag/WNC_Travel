@@ -13,16 +13,10 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
     protected $table = 'users';
     protected $primaryKey = 'id';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
     protected $fillable = [
-        'name',
-        'email',
-        'email_verified_at',
+        'name', 
+        'email', 
+        'email_verified_at', 
         'password',
         'google_id',
         'phone',
@@ -30,9 +24,20 @@ class User extends Authenticatable
     ];
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
+
+    /**
      * The attributes that should be hidden for serialization.
      *
-     * @var list<string>
+     * @var array<int, string>
      */
     protected $hidden = [
         'password',
@@ -51,6 +56,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    public function hasVerifiedEmail()
+    {
+        return $this->email_verified_at !== null;
+    }
+    
     public function address()
     {
         return $this->belongsTo(Address::class, 'idAddress', 'idAddress');
@@ -60,9 +72,5 @@ class User extends Authenticatable
         return $this->hasMany(Booking::class, 'idUser', 'id');
     }
 
-    public function hasVerifiedEmail()
-    {
-        return $this->email_verified_at !== null;
-    }
+ 
 }
-

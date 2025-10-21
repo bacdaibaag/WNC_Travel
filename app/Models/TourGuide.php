@@ -21,6 +21,7 @@ class TourGuide extends Model
     {
         return $this->belongsTo(Address::class, 'idAddress', 'idAddress');
     }
+    
     public function tours()
     {
         return $this->hasMany(Tour::class, 'idTourGuide', 'idTourGuide');

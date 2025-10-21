@@ -9,9 +9,11 @@
         <a href={{ route('tours.index') }} id="listings">Listings</a>
         <a href="W02-blog.html" id="blog">Blog</a>
         @if(Auth::check())
+            <!-- Hiển thị nếu người dùng đã đăng nhập -->
             <a href="{{route('account')}}" id="account">{{ Auth::user()->name }}</a>
             <a href="{{route('logout')}}" id="a_logout">Log out</a>
         @else
+            <!-- Hiển thị nếu người dùng chưa đăng nhập -->
             <a href="{{route('login')}}" id="login">Log in</a>
             <a href="{{route('register')}}" id="register">Register</a>
         @endif

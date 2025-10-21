@@ -24,8 +24,8 @@ class BookingController extends Controller
     //     // Update trạng thái
     //     $booking->confirmation_status = 'confirmed';
     //     $booking->save();
-
         
+
     //     return redirect()->back()->with('success', 'Booking confirmed successfully.');
     // }
     public function confirm(Request $request, $id)
@@ -34,7 +34,7 @@ class BookingController extends Controller
 
         // Tìm người dùng liên quan đến booking
         $user = $booking->user;
-        
+
         if ($user && !empty($user->email)) {
             // Update trạng thái
             $booking->confirmation_status = 'confirmed';

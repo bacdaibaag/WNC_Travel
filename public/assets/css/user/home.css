@@ -580,6 +580,7 @@ select.form-control:focus {
 
 .hidden {
     display: none;
+    gap: 20px;
 }
 
 .active {
@@ -1030,7 +1031,6 @@ select.form-control:focus {
 #navi-to-blog:hover {
     background-color: #be3737;
 }
-
 
 .footer {
     margin-top: 80px;

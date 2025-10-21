@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+<body>
     <div class="container" id="home">
         <div class="login-left">
             <div class="login-header">
