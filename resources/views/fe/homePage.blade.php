@@ -333,4 +333,4 @@
     <script src="{{ asset('assets/js/home.js') }}"></script>
 
 </body>
-</html>
+</html> 
