@@ -45,8 +45,8 @@ class TourSeeder extends Seeder
             [
                 'idTour' => 'TO3',
                 'name' => 'Phu Quoc',
-                'startDay' => '2024-06-15',
-                'endDay' => '2024-06-18',
+                'startDay' => '2025-11-15',
+                'endDay' => '2025-11-18',
                 'cost' => 50,
                 'imageTour' => 'assets/images/phuquoc.jpg',
                 'idAddress' => 11,
@@ -58,8 +58,8 @@ class TourSeeder extends Seeder
             [
                 'idTour' => 'TO4',
                 'name' => 'Phong Nha Ke Bang',
-                'startDay' => '2024-06-15',
-                'endDay' => '2024-06-17',
+                'startDay' => '2025-11-15',
+                'endDay' => '2025-11-17',
                 'cost' => 50,
                 'imageTour' => 'assets/images/phongnhakebang.jpg',
                 'idAddress' => 12,
@@ -71,8 +71,8 @@ class TourSeeder extends Seeder
             [
                 'idTour' => 'TO5',
                 'name' => 'Thanh Dia My Son',
-                'startDay' => '2024-06-20',
-                'endDay' => '2024-06-24',
+                'startDay' => '2025-11-20',
+                'endDay' => '2025-11-24',
                 'cost' => 60,
                 'imageTour' => 'assets/images/thanhdiamyson.jpg',
                 'idAddress' => 13,
@@ -84,8 +84,8 @@ class TourSeeder extends Seeder
             [
                 'idTour' => 'TO6',
                 'name' => 'Phan Xi Pang',
-                'startDay' => '2024-06-20',
-                'endDay' => '2024-06-24',
+                'startDay' => '2025-11-20',
+                'endDay' => '2025-11-24',
                 'cost' => 55,
                 'imageTour' => 'assets/images/phanxipang.jpg',
                 'idAddress' => 14,

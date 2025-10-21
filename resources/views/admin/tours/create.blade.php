@@ -104,7 +104,7 @@
                                     id="exampleTextarea1"
                                     rows="10"
                                     name="description"
-                                    required                                    
+                                    required
                                     ></textarea>
                                 </div>
                             </div>

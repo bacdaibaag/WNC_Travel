@@ -10,13 +10,13 @@ use Illuminate\Http\Request;
 
 class UserHomeController extends Controller
 {
-public function index()
-{
+    public function index()
+    {
         $bookings = Booking::with(['user', 'tour'])
                 ->where('confirmation_status', 'confirmed')
                 ->where('payment_status', 'paid')
                 ->get();
-$tours = Tour::where('endDay', '>', Carbon::now())->get();
+        $tours = Tour::where('endDay', '>', Carbon::now())->get();
         return view('fe.homePage', compact('tours','bookings'));
-}
+    }
 }

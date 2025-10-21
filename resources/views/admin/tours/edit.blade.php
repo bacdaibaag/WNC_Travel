@@ -111,7 +111,7 @@
                                     <span class="input-group-append">
                                         <button class="file-upload-browse btn btn-primary" type="button" onclick="updateImagePath()">Upload</button>
                                     </span>
-                                    <img id="imgPrev" src="{{ asset( $tour->imageTour) }}" alt="Preview Image" style="max-width: 100%; margin-top: 10px;">
+                                <img id="imgPrev" src="{{ asset( $tour->imageTour) }}" alt="Preview Image" style="max-width: 100%; margin-top: 10px;">
                                 </div>
                             </div>
                         </div>

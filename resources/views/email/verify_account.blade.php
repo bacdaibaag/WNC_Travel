@@ -46,7 +46,7 @@
                 src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
             }
         }
-        
+
         /* CLIENT-SPECIFIC STYLES */
         body,
         table,
@@ -55,17 +55,17 @@
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
         }
-        
+
         table,
         /* td {
             mso-table-lspace: 0pt;
             mso-table-rspace: 0pt;
         } */
-        
+
         img {
             -ms-interpolation-mode: bicubic;
         }
-        
+
         /* RESET STYLES */
         img {
             border: 0;
@@ -74,7 +74,7 @@
             outline: none;
             text-decoration: none;
         }
-        
+
         table {
             border-collapse: collapse !important;
         }
@@ -85,7 +85,7 @@
             padding: 0 !important;
             width: 100% !important;
         }
-        
+
         /* iOS BLUE LINKS */
         a[x-apple-data-detectors] {
             color: inherit !important;
@@ -110,8 +110,8 @@
         }
     </style>
 </head>
-<body>
-    <body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
+
+<body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
     <!-- HIDDEN PREHEADER TEXT -->
     <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> We're thrilled to have you here! Get ready to dive into your new account.
     </div>

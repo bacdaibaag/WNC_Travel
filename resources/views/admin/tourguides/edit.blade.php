@@ -43,7 +43,8 @@
                                 </select>
                             </div>
                             <div style="height: 4px;"></div>
-                             <div class="form-group">
+
+                            <div class="form-group">
                                 <label for="ward">Ward</label>
                                 <select class="form-control" id="ward" name="ward">
                                     <option value="{{ $tourGuide->address->ward }}" selected>{{ $tourGuide->address->ward }}</option>

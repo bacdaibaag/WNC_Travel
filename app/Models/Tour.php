@@ -50,7 +50,7 @@ class Tour extends Model
     public function bookings()
     {
         return $this->hasMany(Booking::class, 'idTour', 'idTour');
-    }   
+    }
 
     public function getTotalCostExpired()
     {

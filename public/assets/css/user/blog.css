@@ -137,7 +137,7 @@ h2 {
 .article-group {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Thiết lập grid 2 cột với tỷ lệ tự động */
-    gap: 20px;
+    gap: 20px; 
 }
 .article {
     height: 280px;
@@ -316,4 +316,4 @@ input[type="radio"]:checked + .color-label {
 .tags .marker-tags {
     background-color: #afafaf;
     color: #fff;
-}   
+}

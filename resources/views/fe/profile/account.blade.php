@@ -63,7 +63,7 @@
                         <label for="text">Phone</label>
                         <input type="text" id="phone" name="phone" value="{{ Auth::user()->phone }}" readonly>
                     </div>
-
+      
                     <div>
                         <label for="city">City</label>
                         <select class="form-select form-select-sm mb-3" id="city" name="city">

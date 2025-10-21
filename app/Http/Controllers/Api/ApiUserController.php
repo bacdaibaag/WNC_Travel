@@ -88,12 +88,12 @@ class ApiUserController extends Controller
     }
 
     public function profile(){
-        $userData = Auth::user();
+        $userData = auth()->user();
         return response()->json([
             'status' => true,
             'message' => 'Profile Infomation',
             'data' => $userData,
-            'id' => Auth::user()->id,
+            'id' => auth()->user()->id
         ],200);
     }
 

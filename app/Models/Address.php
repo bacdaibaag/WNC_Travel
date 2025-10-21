@@ -23,7 +23,7 @@ class Address extends Model
     public function tours()
     {
         return $this->hasMany(Tour::class, 'idAddress', 'idAddress');
-    }   
+    }
     public function hotels()
     {
         return $this->hasMany(Hotel::class, 'idAddress', 'idAddress');

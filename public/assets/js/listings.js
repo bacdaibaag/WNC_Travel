@@ -10,9 +10,9 @@ $(document).ready(function() {
         $(".list-box").each(function() {
             let tourName = $(this).find("h4").text().toLowerCase();
             if (tourName.includes(searchTerm)) {
-                $(this).show(); 
+                $(this).show();  
             } else {
-                $(this).hide();
+                $(this).hide();  
             }
         });
     }

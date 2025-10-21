@@ -1,8 +1,6 @@
 <!-- admin.vehicles.index.blade.php -->
 @extends('admin.layouts.app')
 
-@extends('admin.layouts.app')
-
 @section('content')
 
 <div class="col-lg-6 grid-margin stretch-card">

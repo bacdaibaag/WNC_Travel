@@ -22,5 +22,5 @@ class Vehicle extends Model
     public function tours()
     {
         return $this->hasMany(Tour::class, 'idVehicle', 'idVehicle');
-    }
+    }   
 }
