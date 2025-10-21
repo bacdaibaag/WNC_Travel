@@ -17,8 +17,8 @@ class TourSeeder extends Seeder
             [
                 'idTour' => 'TO1',
                 'name' => 'Bai Chay',
-                'startDay' => '2024-06-17',
-                'endDay' => '2024-06-24',
+                'startDay' => '2025-11-17',
+                'endDay' => '2025-11-24',
                 'cost' => 50,
                 'imageTour' => 'assets/images/vinhhalong.jpg',
                 'idAddress' => 9,
