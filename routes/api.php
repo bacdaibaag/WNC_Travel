@@ -34,4 +34,12 @@ Route::group([
 });
 
 //Tours
-Route::apiResource('/tours', ApiTourController::class);
+Route::group(['prefix' => 'api'], function() {
+    Route::apiResource('tours', ApiTourController::class)->names([
+        'index' => 'api.tours.index',
+        'store' => 'api.tours.store',
+        'show' => 'api.tours.show',
+        'update' => 'api.tours.update',
+        'destroy' => 'api.tours.destroy',
+    ]);
+});
